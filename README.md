@@ -10,3 +10,21 @@ The working `specfem3d_globe` repository is located in here
 /tigress/lsawade/specfem3d_globe
 ```
 
+
+## Running the pipeline
+
+To run the pipeline, I follow this sequence of commands:
+
+```bash
+
+# Setup environment variables
+source .entkrc
+
+# Activate EnTK environment
+conda activate entk
+
+# Run the pipeline
+python solver.py
+
+```
+
