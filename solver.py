@@ -1,9 +1,6 @@
 from radical.entk import Pipeline, Stage, Task, AppManager
 import traceback, sys, os
 
-os.environ['RADICAL_PILOT_DBURL'] = "mongodb://user:user123@ds043012.mlab.com:43012/princeton"
-os.environ['RMQ_HOSTNAME'] = "two.radical-project.org"
-os.environ['RMQ_PORT'] = "33267"
 
 hostname = os.environ.get('RMQ_HOSTNAME', 'localhost')
 port = os.environ.get('RMQ_PORT', 5672)
