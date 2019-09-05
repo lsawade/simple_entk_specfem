@@ -8,19 +8,20 @@
 #SBATCH --time 00:30:00
 #SBATCH -p pReserved
 
+module purge
 # load modules
 module load intel
 module load openmpi
 module load cudatoolkit/10.0
 
 # Define your specfem run directory
-cd <your_specfem_run_dir>
+cd /home/lsawade/specfem_run
 
 # Copy and link files
-ln -s /tigress/lsawade/specfem3d_globe/bin .
-ln -s /tigress/lsawade/specfem3d_globe/DATABASES_MPI .
-cp -r /tigress/lsawade/specfem3d_globe/OUTPUT_FILES .
-cp -r /tigress/lsawade/specfem3d_globe/DATA .
+ln -s /scratch/gpfs/lsawade/specfem3d_globe_gpu/bin .
+ln -s /scratch/gpfs/lsawade/specfem3d_globe_gpu/DATABASES_MPI .
+cp -r /scratch/gpfs/lsawade/specfem3d_globe_gpu/OUTPUT_FILES .
+cp -r /scratch/gpfs/lsawade/specfem3d_globe_gpu/DATA .
 
 
 # Run Mesher
