@@ -13,8 +13,15 @@ module load intel
 module load openmpi
 module load cudatoolkit/10.0
 
+# Define your specfem run directory
+cd <your_specfem_run_dir>
+
 # change directory to build
-cd /tigress/lsawade/specfem3d_globe
+ln -s /tigress/lsawade/specfem3d_globe/bin .
+ln -s /tigress/lsawade/specfem3d_globe/DATABASES_MPI .
+cp -s /tigress/lsawade/specfem3d_globe/OUTPUT_FILES .
+cp -s /tigress/lsawade/specfem3d_globe/DATA .
+
 
 # Run Mesher
 srun ./bin/xmeshfem3D
