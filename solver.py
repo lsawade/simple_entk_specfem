@@ -1,9 +1,13 @@
+import toml
 from radical.entk import Pipeline, Stage, Task, AppManager
 import traceback, sys, os
 
 
-hostname = os.environ.get('RMQ_HOSTNAME', 'localhost')
-port = os.environ.get('RMQ_PORT', 5672)
+entkcfg = tompl.load('entk.toml')
+
+hostname = entkcfg['RMQ_HOSTNAME']
+port = entkcfg['RMQ_PORT']
+
 
 if __name__ == '__main__':
     p = Pipeline()
