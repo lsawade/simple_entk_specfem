@@ -1,12 +1,18 @@
 #/bin/bash
 
 
+# Change this!
+testdir=$1
 
+
+# This is where specfem is installed and working
 specfem="/gpfs/alpine/geo111/scratch/lsawade/SpecfemMagic/specfem3d_globe"
+
+
 
 for i in 1 2
 do
-    tdir="/gpfs/alpine/geo111/scratch/lsawade/entk_test/specfem_run_${i}"
+    tdir="${testdir}/specfem_run_${i}"
     # Change to your specfem run directory
     rm -rf ${tdir}
     mkdir ${tdir}
