@@ -81,6 +81,12 @@ Or, as a one-liner:
 for RUNDIR in $(ls $TESTDIR); do cd ${TESTDIR}/${RUNDIR}; jsrun -n6 -a4 -c4 -g1 ./bin/xspecfem3D & cd -; done;
 ```
 
+The creation of the specfem directories is controlled by an executable from
+my software, which could be run as a pre-task or a task, does not really matter.
+
+
+
+
 
 
 
