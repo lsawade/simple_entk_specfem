@@ -1,10 +1,10 @@
 # Simple testing repo to set up EnTK with `specfem3d_globe`
 
 
-## SUMMIT
+## 1. SUMMIT
 
 
-### First simple test to get running
+### 1.1 First simple test to get running
 
 Get interactive job allocation with SMT1 (no jobs make use of simultaneous hardware threads)
 
@@ -40,9 +40,9 @@ You can monitor progress using
 tail -f OUTPUT_FILES/output_solver.txt
 ```
 
+---
 
-
-### Create new specfem simulation directories and run those
+### 1.2 Create new specfem simulation directories and run those
 
 This is a task that the workflow manager will do all the time and
 the crux of the workflow. Meaning, if we get this into EnTK form,
