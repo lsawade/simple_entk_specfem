@@ -1,4 +1,4 @@
-# Simple testing repo for a Specfem Run on the TigerGPU cluster
+# Simple testing repo to set up EnTK with `specfem3d_globe`
 
 
 ## SUMMIT
@@ -34,6 +34,12 @@ jsrun -n6 -a4 -c4 -g1 ./bin/xspecfem3D &
 The code takes about 40 seconds. It uses a total of
 24 MPI tasks, divided into 6 resource sets of 4 CPUS + 1 GPU,
 where each GPU takes 4 MPI tasks.
+
+You can monitor progress using
+```bash
+tail -f OUTPUT_FILES/output_solver.txt
+```
+
 
 
 ### Create new specfem simulation directories and run those
@@ -80,6 +86,17 @@ Or, as a one-liner:
 ```bash
 for RUNDIR in $(ls $TESTDIR); do cd ${TESTDIR}/${RUNDIR}; jsrun -n6 -a4 -c4 -g1 ./bin/xspecfem3D & cd -; done;
 ```
+
+You can monitor the progress using
+```bash
+# For run 1
+tail -f ${TESTDIR}/specfem_run_1/OUTPUT_FILES/output_solver.txt
+
+# For run 2
+tail -f ${TESTDIR}/specfem_run_2/OUTPUT_FILES/output_solver.txt
+```
+
+
 
 The creation of the specfem directories is controlled by an executable from
 my software, which could be run as a pre-task or a task, does not really matter.
