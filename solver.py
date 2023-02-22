@@ -61,7 +61,7 @@ if __name__ == '__main__':
         # Create Task
         t = Task()
         t.name = f"SIMULATION.{i:0>2d}"
-        tdir = f"/gpfs/alpine/geo111/scratch/lsawade/entk_test/specfem_run_{i}"
+        tdir = f"/gpfs/alpine/geo111/scratch/lsawade/entk_test/specfem_run_{i+1}"
         # t.sandbox = tdir
         t.pre_exec = [
             '. /sw/summit/lmod/lmod/init/profile',
