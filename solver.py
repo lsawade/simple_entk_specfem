@@ -26,7 +26,7 @@ print(port)
 print(password[:2] + "*" * (len(password)-4) + password[-2:])
 print(username)
 
-specfem = "/gpfs/alpine/geo111/scratch/lsawade/SpecfemMagic/specfem3d_globe"
+specfem = "/gpfs/alpine/geo111/world-shared/lsawade/specfem3d_globe"
 
 
 
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         # Create Task
         t = Task()
         t.name = f"SIMULATION.{i:0>2d}"
-        tdir = f"/gpfs/alpine/geo111/proj-shared/lsawade/entk_test/specfem_run_{i+1}"
+        tdir = f"/gpfs/alpine/geo111/world-shared/lsawade/entk_test/specfem_run_{i+1}"
         # t.sandbox = tdir
         t.pre_exec = [
             '. /sw/summit/lmod/lmod/init/profile',

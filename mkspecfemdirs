@@ -6,7 +6,7 @@ testdir=$1
 
 
 # This is where specfem is installed and working
-specfem="/gpfs/alpine/geo111/scratch/lsawade/SpecfemMagic/specfem3d_globe"
+specfem="/gpfs/alpine/geo111/world-shared/lsawade/specfem3d_globe"
 
 
 
@@ -15,7 +15,7 @@ do
     tdir="${testdir}/specfem_run_${i}"
     # Change to your specfem run directory
     rm -rf ${tdir}
-    mkdir ${tdir}
+    mkdir -p ${tdir}
     cd ${tdir}
 
     # Create data structure in place
