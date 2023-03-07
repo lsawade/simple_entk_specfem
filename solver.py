@@ -67,12 +67,12 @@ if __name__ == '__main__':
             '. /sw/summit/lmod/lmod/init/profile',
             # Load necessary modules
             'module purge',
-            'module load gcc spectrum-mpi cuda cmake boost',
+            'module load gcc/7.5.0 spectrum-mpi cuda cmake boost',
             f'cd {tdir}'
         ]
         t.executable = './bin/xspecfem3D'
         t.cpu_reqs = {'cpu_processes': 24, 'cpu_process_type': 'MPI', 'cpu_threads': 1, 'cpu_thread_type' : 'OpenMP'}
-        t.gpu_reqs = {'gpu_processes': 1,  'gpu_process_type': None,  'gpu_threads': 1, 'gpu_thread_type' : 'CUDA'}
+        t.gpu_reqs = {'gpu_processes': 1,  'gpu_process_type': 'CUDA',  'gpu_threads': 1, 'gpu_thread_type' : 'CUDA'}
         t.stdout = 'STDOUT'
         t.stderr = 'STDERR'
         t.download_output_data = ['STDOUT', 'STDERR']
